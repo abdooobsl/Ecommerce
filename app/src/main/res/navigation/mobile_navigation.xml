@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.relabs.e_commerce.ui.fragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+         </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.relabs.e_commerce.ui.fragment.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.relabs.e_commerce.ui.fragment.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.relabs.e_commerce.ui.fragment.CartFragment"
+        android:label="@string/title_cart"
+        tools:layout="@layout/fragment_cart"
+        />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.relabs.e_commerce.ui.fragment.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+</navigation>
