@@ -1,4 +1,4 @@
-package com.relabs.e_commerce.ui.viewmodel;
+package com.relabs.e_commerce.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 

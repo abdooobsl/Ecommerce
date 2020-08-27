@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.relabs.e_commerce.R;
-import com.relabs.e_commerce.ui.viewmodel.CartViewModel;
+import com.relabs.e_commerce.viewmodel.CartViewModel;
 
 public class CartFragment extends Fragment {
 

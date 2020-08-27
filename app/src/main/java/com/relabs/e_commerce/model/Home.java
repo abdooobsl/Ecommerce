@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Home
 {
-    public Banners banners;
+    public List<Banner> banners;
     public List<Category> categories;
     public List<Product> products;
 }

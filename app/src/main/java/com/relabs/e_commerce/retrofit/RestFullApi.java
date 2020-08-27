@@ -2,6 +2,7 @@ package com.relabs.e_commerce.retrofit;
 
 
 import com.relabs.e_commerce.model.Home;
+import com.relabs.e_commerce.model.Server_Category_Products_Response;
 import com.relabs.e_commerce.model.server_message;
 import com.relabs.e_commerce.model.login_message;
 
@@ -58,4 +59,14 @@ public interface RestFullApi {
     @FormUrlEncoded
     @POST("forget")
     Observable<server_message> forget(@Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("favourite")
+    Observable<server_message> favourite(@Field("user_id") int user_id,
+                                        @Field("product_id") int product_id);
+
+    @FormUrlEncoded
+    @POST("getCategoryProducts")
+    Observable<Server_Category_Products_Response> getCategoryProducts(@Field("category_id") int category_id);
+
 }

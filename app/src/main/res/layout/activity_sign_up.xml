@@ -5,7 +5,7 @@
     <data>
         <variable
             name="sigunup"
-            type="com.relabs.e_commerce.ui.viewmodel.SignUpViewModel" />
+            type="com.relabs.e_commerce.viewmodel.SignUpViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

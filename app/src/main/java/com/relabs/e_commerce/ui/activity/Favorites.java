@@ -6,12 +6,11 @@ import android.os.Bundle;
 
 import com.relabs.e_commerce.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class Favorites extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
+        setContentView(R.layout.activity_favorites);
     }
 }

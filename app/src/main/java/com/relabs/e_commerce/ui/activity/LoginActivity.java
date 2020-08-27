@@ -6,19 +6,16 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.relabs.e_commerce.R;
 import com.relabs.e_commerce.databinding.ActivityLoginBinding;
-import com.relabs.e_commerce.ui.viewmodel.LoginViewModel;
+import com.relabs.e_commerce.viewmodel.LoginViewModel;
 import com.relabs.e_commerce.util.Common;
 
 public class LoginActivity extends AppCompatActivity {

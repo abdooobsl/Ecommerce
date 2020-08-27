@@ -4,15 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.relabs.e_commerce.R;
 import com.relabs.e_commerce.databinding.ActivityForgetPasswordBinding;
-import com.relabs.e_commerce.ui.viewmodel.ForgetPasswordViewModel;
-import com.relabs.e_commerce.ui.viewmodel.LoginViewModel;
+import com.relabs.e_commerce.viewmodel.ForgetPasswordViewModel;
 
 public class ForgetPasswordActivity extends AppCompatActivity {
     private ForgetPasswordViewModel viewModel;

@@ -13,10 +13,7 @@ import android.widget.Toast;
 
 import com.relabs.e_commerce.R;
 import com.relabs.e_commerce.databinding.ActivitySignUpBinding;
-import com.relabs.e_commerce.ui.viewmodel.LoginViewModel;
-import com.relabs.e_commerce.ui.viewmodel.SignUpViewModel;
-
-import java.util.Objects;
+import com.relabs.e_commerce.viewmodel.SignUpViewModel;
 
 public class SignUpActivity extends AppCompatActivity {
     ActivitySignUpBinding binding;

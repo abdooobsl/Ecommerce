@@ -6,7 +6,7 @@
     <data>
         <variable
             name="loginmodel"
-            type="com.relabs.e_commerce.ui.viewmodel.LoginViewModel" />
+            type="com.relabs.e_commerce.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

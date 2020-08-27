@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.relabs.e_commerce.R;
-import com.relabs.e_commerce.ui.viewmodel.MoreViewModel;
+import com.relabs.e_commerce.viewmodel.MoreViewModel;
 
 public class MoreFragment extends Fragment {
 

@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.relabs.e_commerce.R;
-import com.relabs.e_commerce.ui.viewmodel.SearchViewModel;
+import com.relabs.e_commerce.viewmodel.SearchViewModel;
 
 public class SearchFragment extends Fragment {
 
