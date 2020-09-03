@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"المتجر "</string>
+    <string name="title_home">الرئيسية</string>
+    <string name="title_more">المزيد</string>
+    <string name="title_search">بحث</string>
+    <string name="title_cart">العربة</string>
+    <string name="log_out">خروج</string>
+    <string name="emailH">أدخل الإيميل</string>
+    <string name="passH">أدخل الباسورد</string>
+    <string name="confirm_pass">أكد الباسسورد</string>
+    <string name="name">أدخل الاسم</string>
+    <string name="signUp_text">تسجيل حساب جديد</string>
+    <string name="signUp_button">"تسجيل "</string>
+    <string name="forget_password">نسيت كلمة مرور</string>
+    <string name="send_email">أرسل الإيميل</string>
+    <string name="title_dashboard">البروفايل</string>
+    <string name="forget_text">أدخل الإيميل المستخدم في التسجيل و سنرسل ايميل لك</string>
+    <string name="signUp_t">بإنشئك حساب انت موافق علي</string>
+    <string name="terms">شروط خدمة</string>
+    <string name="privacy">"سياسة خصوصية "</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="all_my_order">جميع طلباتي</string>
+    <string name="delivered_orders">الطلبات التي تم توصيلها</string>
+    <string name="shipped_orders">الطلبات التي تم شحنها</string>
+    <string name="confirmed_orders">الطلبات التي تم تأكيدها</string>
+    <string name="pending_orders">الطلبات المعلقة</string>
+    <string name="my_address">"عناويني "</string>
+    <string name="invite_friends">إدعو أصدقائك</string>
+    <string name="rate_us">قيمنا</string>
+    <string name="give_us_feedback">ارسل لنا رأيك</string>
+    <string name="customer_support">خدمة العملاء</string>
+    <string name="remember_me">"تذكرني "</string>
+    <string name="favorites">المفضلة</string>
+    <string name="title_activity_category_activty">الأقسام</string>
+    <string name="next">التالي</string>
+    <string name="previous">السابق</string>
+    <string name="add_to_cart">أضف إلي العربة</string>
+    <string name="you_must_sign_in">"يجب عليك تسجيل الدخول "</string>
+    <string name="login">"تسجيل الدخول "</string>
+    <string name="search_bar">عن ماذا تبحث ؟</string>
+</resources>

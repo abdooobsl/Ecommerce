@@ -18,13 +18,12 @@ import com.smarteist.autoimageslider.SliderViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterVH> {
+public class HomeSliderAdapter extends SliderViewAdapter<HomeSliderAdapter.SliderAdapterVH> {
     private Context context;
     private List<Banner> banners = new ArrayList<>();
 
-    public SliderAdapter(Context context) {
+    public HomeSliderAdapter(Context context) {
         this.context = context;
-
           }
 
     public void renewItems (List<Banner> sliderItems) {

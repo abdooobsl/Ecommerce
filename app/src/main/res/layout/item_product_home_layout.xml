@@ -34,12 +34,20 @@
                 android:id="@+id/text_product_home_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="TextView"
                 android:maxLines="1"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/text_product_home_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_horizontal"
+                android:text="TextView"
+                android:textAlignment="center" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

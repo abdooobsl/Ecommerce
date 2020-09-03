@@ -73,18 +73,15 @@ public class SignUpActivity extends AppCompatActivity {
                     startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                     finish();
                 }
-                else
-                    /*if (viewModel.errors.getValue().email != null){
-                        Toast.makeText(getApplicationContext(), viewModel.errors.getValue().email.get(0), Toast.LENGTH_SHORT).show();
-                    }
-
-                     */
-                    Toast.makeText(getApplicationContext(), viewModel.log_message.getValue(), Toast.LENGTH_SHORT).show();
-
 
             }
-
+            viewModel.errors.observe(SignUpActivity.this,errors -> {
+                if (errors!=null && !viewModel.errors.getValue().email.isEmpty()){
+                    Toast.makeText(getApplicationContext(), viewModel.errors.getValue().email.get(0), Toast.LENGTH_SHORT).show();
+                }
+            });
 
         });
+
     }
 }

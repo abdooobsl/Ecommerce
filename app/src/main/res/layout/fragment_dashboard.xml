@@ -47,28 +47,31 @@
 
                 <LinearLayout
                     android:id="@+id/linearLayout2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     android:orientation="vertical"
                     app:layout_constraintStart_toEndOf="@+id/circleImageView"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/text_user_name"
-                        android:layout_width="@dimen/_180sdp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="45dp"
+                        android:layout_gravity="center"
                         android:fontFamily="@font/neusa_bold"
+                        android:text="@string/you_must_sign_in"
+                        android:textAlignment="center"
                         android:textColor="#515C6F"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/text_user_email"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_gravity="center"
                         android:fontFamily="@font/neusa_medium"
+                        android:textAlignment="center"
                         android:textColor="#515C6F"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -77,12 +80,10 @@
                     android:id="@+id/button_log_in_out"
                     android:layout_width="@dimen/_180sdp"
                     android:layout_height="@dimen/_25sdp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/shape_round_grey"
                     android:text="Sign In"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/circleImageView"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 

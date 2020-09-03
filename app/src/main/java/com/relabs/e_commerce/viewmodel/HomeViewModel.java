@@ -56,7 +56,6 @@ public class HomeViewModel extends AndroidViewModel {
                         banner.setValue(home.banners);
                         category.setValue(home.categories);
                         product.setValue(home.products);
-                        Log.d("test",home.banners.size()+"");
                     }
                 })
         );

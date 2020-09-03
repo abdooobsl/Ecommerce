@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import com.relabs.e_commerce.model.User;
 import com.relabs.e_commerce.model.login_message;
 import com.relabs.e_commerce.retrofit.RestFullApi;
 import com.relabs.e_commerce.util.Common;
@@ -40,6 +41,7 @@ public class LoginViewModel extends AndroidViewModel {
     public MutableLiveData<String> log_message = new MutableLiveData<>();
     public MutableLiveData<Integer> success = new MutableLiveData<>();
     public MutableLiveData<Boolean> logged = new MutableLiveData<>();
+    public MutableLiveData<User> user = new MutableLiveData<User>();
 
 
     public void login() {
@@ -59,20 +61,7 @@ public class LoginViewModel extends AndroidViewModel {
                         Common.CURRENT_USER = login_message.user;
                         log_message.setValue(login_message.message);
                         success.setValue(login_message.success);
-                        if (success.getValue() == 1) {
-                            editor.putInt("user_id", login_message.user.id);
-                            editor.putString("user_email", email.getValue());
-                            editor.putString("user_password", password.getValue());
-                            editor.putString("user_name", login_message.user.name);
-                            editor.putString("user_avatar", login_message.user.avatar);
-                            editor.putString("user_email_verified_at", login_message.user.email_verified_at);
-                            editor.putString("user_created_at", login_message.user.created_at);
-                            editor.putString("user_updated_at", login_message.user.updated_at);
-                            editor.commit();
-                            logged.setValue(true);
-                        } else {
-                            logged.setValue(false);
-                        }
+                        user.setValue(login_message.user);
                     }
                 })
         );

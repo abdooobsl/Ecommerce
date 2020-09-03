@@ -8,4 +8,7 @@ public class Errors {
     public List<String> email;
     public List<String> user_id;
     public List<String> product_id;
+    public List<String> category_id;
+    public List<String> comment;
+    public List<String> rating;
 }

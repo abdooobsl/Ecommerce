@@ -44,14 +44,16 @@ public class HomeProductAdaper extends RecyclerView.Adapter<HomeProductAdaper.Pr
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
 
         ImageView imageView =holder.itemView.findViewById(R.id.image_product_home);
-        TextView textView=holder.itemView.findViewById(R.id.text_product_home_name);
+        TextView name=holder.itemView.findViewById(R.id.text_product_home_name);
+        TextView price=holder.itemView.findViewById(R.id.text_product_home_price);
         if(context!= null){
             Glide.with(context)
                     .load(Common.PRODUCT_URL+newProductList.get(position).image)
                     .fitCenter()
                     .into(imageView);
         }
-        textView.setText(newProductList.get(position).title);
+        name.setText(newProductList.get(position).title);
+       price.setText(newProductList.get(position).price+"$");
     }
 
     @Override

@@ -5,9 +5,6 @@
     <string name="title_more">More</string>
     <string name="title_search">Search</string>
     <string name="title_cart">Cart</string>
-    <string name="title_activity_splash">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="login">LOG IN</string>
     <string name="log_out">Log Out</string>
     <string name="emailH">Enter Email</string>
@@ -36,5 +33,12 @@
     <string name="customer_support">Customer Support</string>
     <string name="remember_me">Remember Me</string>
     <string name="favorites">Favorites</string>
+    <string name="title_activity_category_activty">Category</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="you_must_sign_in">you must sign in</string>
+    <string name="search_bar">What are you looking for ?</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
 
 </resources>

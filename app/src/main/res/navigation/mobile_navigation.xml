@@ -34,4 +34,9 @@
         android:name="com.relabs.e_commerce.ui.fragment.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
+    <activity
+        android:id="@+id/activity_login"
+        android:name="com.relabs.e_commerce.ui.activity.LoginActivity"
+        android:label="@string/login"
+        tools:layout="@layout/activity_login" />
 </navigation>

@@ -7,17 +7,19 @@
             name="sigunup"
             type="com.relabs.e_commerce.viewmodel.SignUpViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/md_grey_300"
         tools:context=".ui.activity.SignUpActivity">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="64dp"
-            android:fontFamily="@font/neusa_bold"
             android:text="@string/signUp_text"
             android:textColor="#515C6F"
             android:textSize="@dimen/_35sdp"
@@ -63,13 +65,11 @@
                         android:layout_marginBottom="@dimen/_2sdp"
                         android:background="@null"
                         android:ems="10"
-                        android:fontFamily="@font/neusa_medium"
                         android:hint="@string/name"
                         android:inputType="textPersonName"
                         android:padding="@dimen/_5sdp"
                         android:textColor="@color/blackTextColor"
-                        android:textColorHint="@color/black"
-                       />
+                        android:textColorHint="@color/black" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -93,7 +93,6 @@
                         android:layout_marginBottom="@dimen/_2sdp"
                         android:background="@null"
                         android:ems="10"
-                        android:fontFamily="@font/neusa_medium"
                         android:hint="@string/emailH"
                         android:inputType="textEmailAddress"
                         android:padding="@dimen/_5sdp"
@@ -107,13 +106,13 @@
                     android:layout_marginStart="@dimen/_3sdp"
                     android:orientation="horizontal">
 
-                     <ImageView
+                    <ImageView
                         android:id="@+id/imageView5_SignUp"
                         android:layout_width="@dimen/_25sdp"
                         android:layout_height="@dimen/_25sdp"
-                        android:scaleType="fitXY"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/_3sdp"
+                        android:scaleType="fitXY"
                         app:srcCompat="@drawable/password_50px" />
 
                     <EditText
@@ -122,13 +121,13 @@
                         android:layout_height="@dimen/_40sdp"
                         android:background="@null"
                         android:ems="10"
-                        android:fontFamily="@font/neusa_medium"
                         android:hint="@string/passH"
                         android:inputType="textPassword"
                         android:padding="@dimen/_3sdp"
                         android:textColor="@color/blackTextColor"
                         android:textColorHint="@color/blackTextColor" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -150,7 +149,6 @@
                         android:layout_height="@dimen/_40sdp"
                         android:background="@null"
                         android:ems="10"
-                        android:fontFamily="@font/neusa_medium"
                         android:hint="@string/confirm_pass"
                         android:inputType="textPassword"
                         android:padding="@dimen/_3sdp"
@@ -168,9 +166,9 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/shape_border"
+            android:drawableEnd="@drawable/next_page_50px"
             android:text="@string/signUp_button"
             android:textColor="@color/white"
-            android:drawableEnd="@drawable/next_page_50px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />

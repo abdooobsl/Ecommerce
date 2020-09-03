@@ -1,5 +1,6 @@
 package com.relabs.e_commerce.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,18 +14,23 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.relabs.e_commerce.R;
-import com.relabs.e_commerce.adapter.CategoryAdapter;
+import com.relabs.e_commerce.adapter.HomeCategoryAdapter;
 import com.relabs.e_commerce.adapter.HomeProductAdaper;
-import com.relabs.e_commerce.adapter.SliderAdapter;
+import com.relabs.e_commerce.adapter.HomeSliderAdapter;
 import com.relabs.e_commerce.databinding.FragmentHomeBinding;
+import com.relabs.e_commerce.model.Category;
+import com.relabs.e_commerce.model.Product;
+import com.relabs.e_commerce.ui.activity.CategoryActivity;
+import com.relabs.e_commerce.ui.activity.ProductActivity;
+import com.relabs.e_commerce.util.Common;
 import com.relabs.e_commerce.viewmodel.HomeViewModel;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel viewModel;
     private FragmentHomeBinding binding;
-    private SliderAdapter adapter;
-    private CategoryAdapter categoryAdapter;
+    private HomeSliderAdapter adapter;
+    private HomeCategoryAdapter homeCategoryAdapter;
     private HomeProductAdaper homeProductAdaper;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,8 +38,8 @@ public class HomeFragment extends Fragment {
         viewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         binding.setHome(viewModel);
-        adapter = new SliderAdapter(getContext());
-        categoryAdapter=new CategoryAdapter(getContext());
+        adapter = new HomeSliderAdapter(getContext());
+        homeCategoryAdapter =new HomeCategoryAdapter(getContext());
         homeProductAdaper=new HomeProductAdaper(getContext());
         return binding.getRoot();
     }
@@ -45,6 +51,20 @@ public class HomeFragment extends Fragment {
         observeViewModel();
         binding.rvCategories.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         binding.rvProducts.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        homeCategoryAdapter.setOnItemClickListener(new HomeCategoryAdapter.onItemClickListener() {
+            @Override
+            public void onItemClick(Category item) {
+                Common.CURRENT_CATEGORY=item;
+                startActivity(new Intent(getContext(), CategoryActivity.class));
+            }
+        });
+        homeProductAdaper.setOnItemClickListener(new HomeProductAdaper.onItemClickListener() {
+            @Override
+            public void onItemClick(Product item) {
+                Common.CURRENT_PRODUCT=item;
+                startActivity(new Intent(getContext(), ProductActivity.class));
+            }
+        });
     }
 
     private void observeViewModel() {
@@ -56,8 +76,8 @@ public class HomeFragment extends Fragment {
         });
         viewModel.category.observe(getActivity(), categories -> {
             if(categories!=null){
-                categoryAdapter.updateList(categories);
-                binding.rvCategories.setAdapter(categoryAdapter);
+                homeCategoryAdapter.updateList(categories);
+                binding.rvCategories.setAdapter(homeCategoryAdapter);
 
             }
 

@@ -19,12 +19,12 @@ import com.relabs.e_commerce.R;
 import com.relabs.e_commerce.model.Category;
 import com.relabs.e_commerce.util.Common;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryAdapter.CategoryViewHolder> {
     private List<Category> newCategoryList = new ArrayList<>();
     onItemClickListener listener;
     Context context;
 
-    public CategoryAdapter(Context context) {
+    public HomeCategoryAdapter(Context context) {
         this.context = context;
     }
 

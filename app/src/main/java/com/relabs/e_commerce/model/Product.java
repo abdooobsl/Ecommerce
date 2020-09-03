@@ -1,5 +1,7 @@
 package com.relabs.e_commerce.model;
 
+import java.util.List;
+
 public class Product
 {
     public int id;
@@ -12,4 +14,7 @@ public class Product
     public int status;
     public String created_at;
     public String updated_at;
+    public int rating;
+    public List<Comment> comments;
+    public List<Image> images;
 }

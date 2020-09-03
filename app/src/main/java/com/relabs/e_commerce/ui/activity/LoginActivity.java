@@ -21,8 +21,9 @@ import com.relabs.e_commerce.util.Common;
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private LoginViewModel viewModel;
-    SharedPreferences preferences;
+    SharedPreferences preferences, preferences2;
     SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +32,12 @@ public class LoginActivity extends AppCompatActivity {
         binding.setLifecycleOwner(LoginActivity.this);
         binding.setLoginmodel(viewModel);
         preferences = getApplicationContext().getSharedPreferences("UserData", 0);
-        editor=preferences.edit();
+        editor = preferences.edit();
+        binding.checkBoxRememberMe.setChecked(preferences.getBoolean("user_pref", false));
         binding.checkBoxRememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Common.USER_PREFERENCE=isChecked;
+                Common.USER_PREFERENCE = isChecked;
             }
         });
         binding.signUp.setOnClickListener(new View.OnClickListener() {
@@ -56,18 +58,15 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(binding.editTextTextEmailAddress.getText())) {
                     binding.editTextTextEmailAddress.setError("Enter an E-Mail Address");
                     binding.editTextTextEmailAddress.requestFocus();
-                }
-                else if (TextUtils.isEmpty(binding.editTextTextPassword.getText())) {
+                } else if (TextUtils.isEmpty(binding.editTextTextPassword.getText())) {
                     binding.editTextTextPassword.setError("Enter a Password");
                     binding.editTextTextPassword.requestFocus();
-                }
-                else if (Patterns.EMAIL_ADDRESS.matcher(binding.editTextTextEmailAddress.getText()).matches()) {
+                } else if (Patterns.EMAIL_ADDRESS.matcher(binding.editTextTextEmailAddress.getText()).matches()) {
                     viewModel.email.setValue(binding.editTextTextEmailAddress.getText().toString());
                     viewModel.password.setValue(binding.editTextTextPassword.getText().toString());
                     viewModel.login();
 
-                }
-                else {
+                } else {
                     binding.editTextTextEmailAddress.setError("Enter a Valid E-mail Address");
                     binding.editTextTextEmailAddress.requestFocus();
                 }
@@ -78,14 +77,28 @@ public class LoginActivity extends AppCompatActivity {
 
     private void observeViewModel() {
 
-    viewModel.logged.observe(LoginActivity.this,isLogged->{
-        if (isLogged != null && isLogged) {
-            Toast.makeText(getApplicationContext(),viewModel.log_message.getValue(),Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
-        }
-        else
-            Toast.makeText(getApplicationContext(),"wrong username or password",Toast.LENGTH_SHORT).show();
-    });
+        viewModel.success.observe(LoginActivity.this, isLogged -> {
+            if (isLogged != null && isLogged == 1) {
+                Toast.makeText(getApplicationContext(), viewModel.log_message.getValue(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
+            } else
+                Toast.makeText(getApplicationContext(), "wrong username or password", Toast.LENGTH_SHORT).show();
+        });
+        viewModel.user.observe(LoginActivity.this, user -> {
+            if (user != null) {
+                if (binding.checkBoxRememberMe.isChecked()) {
+                    editor.putBoolean("user_pref", true);
+                    editor.putString("user_email", viewModel.email.getValue());
+                    editor.putString("user_pass", viewModel.password.getValue());
+                    editor.commit();
+                }
+                else {
+                    editor.putBoolean("user_pref", false);
+                }
+
+
+            }
+        });
     }
 }
