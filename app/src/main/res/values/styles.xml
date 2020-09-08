@@ -8,6 +8,7 @@
         <item name="titleTextColor">@color/md_blue_grey_900</item>
         <item name="itemIconTint">@color/md_blue_grey_900</item>
         <item name="fontFamily">@font/co</item>
+        b
         <item name="android:textColor">#515C6F</item>
     </style>
 

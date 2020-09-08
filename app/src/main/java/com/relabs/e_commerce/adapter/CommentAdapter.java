@@ -34,6 +34,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         newCommentList.addAll(CommentList);
         notifyDataSetChanged();
     }
+
     public void addItem(Comment comment) {
         this.newCommentList.add(comment);
         notifyDataSetChanged();
@@ -48,8 +49,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
     @Override
     public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
-        binding.userNameComment.setText(newCommentList.get(position).user.name+" :");
-        binding.userCommentComment.setText(newCommentList.get(position).comment);
+        if (newCommentList != null) {
+            binding.userNameComment.setText(newCommentList.get(position).user.name + " :");
+            binding.userCommentComment.setText(newCommentList.get(position).comment);
+        }
     }
 
     @Override

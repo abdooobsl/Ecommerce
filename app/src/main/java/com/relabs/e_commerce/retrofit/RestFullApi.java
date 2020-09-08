@@ -3,6 +3,7 @@ package com.relabs.e_commerce.retrofit;
 
 import android.widget.ScrollView;
 
+import com.relabs.e_commerce.model.CartList;
 import com.relabs.e_commerce.model.Home;
 import com.relabs.e_commerce.model.Product_response;
 import com.relabs.e_commerce.model.Search;
@@ -17,38 +18,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface RestFullApi {
-    /*    @GET("get_services")
-        Observable<Clinic> get_services();
 
-        @FormUrlEncoded
-        @POST("get_appointments")
-        Observable<AppointmentData> get_appointments(@Field("b_id") String b_id,
-                                                     @Field("from") String from,
-                                                     @Field("to") String to);
-
-        @FormUrlEncoded
-        @POST("update_appointment")
-        Observable<Message> updateStatus(@Field("id") String id, @Field("status") String status);
-
-        @FormUrlEncoded
-        @POST("get_time_slot")
-        Observable<TimeSlot> get_time_slot(@Field("b_id") String b_id, @Field("date") String date);
-
-        @FormUrlEncoded
-        @POST("cancel_appointment")
-        Observable<CancelAppointment> cancel_appointment(@Field("user_id") String user_id, @Field("app_id") String app_id);
-        @FormUrlEncoded
-        @POST("add_appointment")
-        Observable<Confirmation> add_appointment(@Field("user_id") String user_id,
-                                                 @Field("user_fullname") String user_fullname,
-                                                 @Field("user_email") String user_email,
-                                                 @Field("user_phone") String user_phone,
-                                                 @Field("appointment_date") String appointment_date,
-                                                 @Field("start_time") String start_time,
-                                                 @Field("time_token") String time_token,
-                                                 @Field("b_id") String b_id);
-
-     */
     @GET("gethome")
     Observable<Home> get_home();
 
@@ -94,4 +64,23 @@ public interface RestFullApi {
     @FormUrlEncoded
     @POST("searchKeyword")
     Observable<Search> searchKeyword(@Field("keyword") String keyword);
+    @FormUrlEncoded
+    @POST("addTocart")
+    Observable<CartList> addTocart (@Field("user_id") int user_id,
+                                    @Field("product_id") int product_id,
+                                    @Field("quantity") int quantity);
+    @FormUrlEncoded
+    @POST("updateCart")
+    Observable<CartList> updateCart (@Field("user_id") int user_id,
+                                    @Field("product_id") int product_id,
+                                    @Field("quantity") int quantity);
+    @FormUrlEncoded
+    @POST("cartList")
+    Observable<CartList> cartList (@Field("user_id") int user_id);
+
+    @FormUrlEncoded
+    @POST("placeOrder")
+    Observable<server_message> placeOrder (@Field("user_id") int user_id,
+                                     @Field("total") int total,
+                                     @Field("notes") String notes);
 }

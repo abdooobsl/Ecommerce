@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import com.relabs.e_commerce.model.CartList;
 import com.relabs.e_commerce.model.Comment;
 import com.relabs.e_commerce.model.Errors;
 import com.relabs.e_commerce.model.Image;
@@ -39,6 +40,10 @@ public class ProductViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> rate = new MutableLiveData<>();
     public MutableLiveData<List<Comment>> comments = new MutableLiveData<List<Comment>>();
     public MutableLiveData<List<Image>> images = new MutableLiveData<List<Image>>();
+    public MutableLiveData<Integer> quantity = new MutableLiveData<>();
+    public MutableLiveData<Integer> user_id = new MutableLiveData<>();
+    public MutableLiveData<String> message_cart = new MutableLiveData<>();
+    public MutableLiveData<Integer> success_cart = new MutableLiveData<>();
 
     public void getProduct() {
         disposable.add(restFullApi.getProductByid(product_id.getValue())
@@ -47,7 +52,7 @@ public class ProductViewModel extends AndroidViewModel {
                 .onErrorResumeNext(new ObservableSource<Product_response>() {
                     @Override
                     public void subscribe(Observer<? super Product_response> observer) {
-                        Log.d("error",observer+"");
+                        Log.d("error", observer + "");
                     }
                 })
                 .subscribe(new Consumer<Product_response>() {
@@ -59,11 +64,34 @@ public class ProductViewModel extends AndroidViewModel {
                         rate.setValue(product_response.product.rating);
                         comments.setValue(product_response.product.comments);
                         images.setValue(product_response.product.images);
-                        Log.d("test",comments.getValue().size()+"");
+                        //Log.d("test_comments", comments.getValue().get(0).user.name + "");
                     }
                 })
 
         );
 
+    }
+
+    public void addToCart() {
+        disposable.add(restFullApi.addTocart(user_id.getValue(),product_id.getValue(),quantity.getValue())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .onErrorResumeNext(new ObservableSource<CartList>() {
+                    @Override
+                    public void subscribe(Observer<? super CartList> observer) {
+
+                    }
+                })
+                .subscribe(new Consumer<CartList>() {
+                    @Override
+                    public void accept(CartList cartList) throws Exception {
+                        success_cart.setValue(cartList.success);
+                        message_cart.setValue(cartList.message);
+                        errors.setValue(cartList.errors);
+                    }
+                })
+
+
+        );
     }
 }

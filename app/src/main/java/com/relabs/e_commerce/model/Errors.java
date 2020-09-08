@@ -11,4 +11,7 @@ public class Errors {
     public List<String> category_id;
     public List<String> comment;
     public List<String> rating;
+    public List<String> quantity;
+    public List<String> total;
+    public List<String> notes;
 }

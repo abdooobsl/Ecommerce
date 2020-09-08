@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/md_grey_300"
+        android:background="@drawable/old_gray"
         android:paddingBottom="56dp"
         tools:context=".ui.fragment.DashboardFragment">
 
@@ -63,7 +63,7 @@
                         android:text="@string/you_must_sign_in"
                         android:textAlignment="center"
                         android:textColor="#515C6F"
-                        android:textSize="24sp" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/text_user_email"
@@ -73,7 +73,7 @@
                         android:fontFamily="@font/neusa_medium"
                         android:textAlignment="center"
                         android:textColor="#515C6F"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
 
                 <Button

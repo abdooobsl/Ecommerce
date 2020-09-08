@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activity.AddCommentActivity"></activity>
+        <activity
+            android:name=".ui.activity.FinishedOrderActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".ui.activity.CheckoutActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".ui.activity.AddCommentActivity" />
         <activity
             android:name=".ui.activity.ProductActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />

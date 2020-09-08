@@ -40,5 +40,13 @@
     <string name="you_must_sign_in">you must sign in</string>
     <string name="search_bar">What are you looking for ?</string>
     <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="checkout">CHECKOUT</string>
+    <string name="plus_shipping">Plus shipping</string>
+    <string name="total">Total</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="choose_address">Choose Another Address</string>
+    <string name="place_order">Place Order</string>
+    <string name="on_cash_delivery">On Cash Delivery</string>
+    <string name="credit_card">Credit Card</string>
 
 </resources>

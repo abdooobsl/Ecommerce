@@ -13,10 +13,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/md_grey_300"
+        android:background="@drawable/old_gray"
         tools:context=".ui.activity.ProductActivity">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="#515C6F"
@@ -27,6 +28,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -140,21 +142,21 @@
                                 app:srb_stepSize="0.5" />
                         </LinearLayout>
 
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/product_activity_add_to_cart"
+                                android:id="@+id/add_to_cart_product"
                                 android:layout_width="@dimen/_230sdp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_margin="@dimen/_5sdp"
                                 android:background="@drawable/shape_border"
                                 android:text="@string/add_to_cart"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
+                                android:layout_margin="@dimen/_5sdp"
+                                android:textColor="@color/white" />
 
                             <com.like.LikeButton
                                 android:id="@+id/add_to_fav"
@@ -171,6 +173,7 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView6"
@@ -237,10 +240,11 @@
                     android:textColor="#515C6F"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rv_comments" />
-
+                    app:layout_constraintStart_toStartOf="@id/rv_comments"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_comments" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.relabs.e_commerce.R;
 import com.relabs.e_commerce.adapter.CommentAdapter;
@@ -38,13 +40,25 @@ public class ProductActivity extends AppCompatActivity {
         viewModel.product_id.setValue(Common.CURRENT_PRODUCT.id);
         viewModel.getProduct();
         observeViewModel();
+        binding.addToCartProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewModel.quantity.setValue(1);
+                viewModel.user_id.setValue(Common.CURRENT_USER.id);
+                viewModel.product_id.setValue(Common.CURRENT_PRODUCT.id);
+                viewModel.addToCart();
+            }
+        });
+
         binding.addComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProductActivity.this,AddCommentActivity.class));
+                startActivity(new Intent(ProductActivity.this, AddCommentActivity.class));
                 finish();
             }
         });
+
+
     }
 
     private void observeViewModel() {
@@ -75,13 +89,12 @@ public class ProductActivity extends AppCompatActivity {
                 if (comments.size() >= 1) {
                     binding.rvComments.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
                     commentAdapter.updateList(viewModel.comments.getValue());
-                }
-                else {
-                    Comment comment=new Comment();
-                    User user=new User();
-                    user.name=" ";
-                    comment.user=user;
-                    comment.comment="no comments yet add yours ";
+                } else {
+                    Comment comment = new Comment();
+                    User user = new User();
+                    user.name = " ";
+                    comment.user = user;
+                    comment.comment = "no comments yet add yours ";
                     commentAdapter.addItem(comment);
                 }
                 binding.rvComments.setAdapter(commentAdapter);
@@ -112,7 +125,15 @@ public class ProductActivity extends AppCompatActivity {
 
             }
         });
+        viewModel.message_cart.observe(this, message -> {
+            if (message != null) {
+
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+
 
 
 }
